@@ -1,0 +1,190 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: #ffffff; /* White text */
+  background-color: #121212; /* Dark mode background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Game Container */
+.game-container {
+  text-align: center;
+  background-color: #1f1f1f; /* Slight contrast to dark background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  width: 90%;
+  max-width: 600px; /* Maintain a readable width for large screens */
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #00e676; /* Bright green heading */
+}
+
+/* Custom Audio Player Styles */
+.audio-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Player width */
+  background-color: #282828; /* Darker than game container for separation */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto; /* Center it */
+  color: #ffffff;
+}
+
+/* Progress bar styling */
+.audio-progress {
+  position: relative;
+  flex-grow: 1; /* Fill remaining space */
+  height: 10px;
+  background: #555555; /* Gray track */
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 15px; /* Space from buttons */
+  overflow: hidden;
+}
+
+.audio-progress-bar {
+  height: 100%;
+  width: 0%; /* Starts empty */
+  background: #00e676; /* Bright green progress bar */
+  transition: width 0.2s ease-out;
+}
+
+/* Play button styling */
+.audio-button {
+  background: #333333; /* Darker button */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.audio-button:hover {
+  background: #00e676; /* Bright green hover effect */
+  color: #121212; /* Contrast hover text */
+}
+
+/* Hidden audio player */
+.audio-player {
+  display: none; /* Hides original player completely */
+}
+
+/* Buttons for song choices */
+.choices {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.choice {
+  background-color: #333333;
+  color: #ffffff;
+  border: 2px solid #444444;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.choice:hover {
+  background-color: #00e676;
+  color: #121212;
+}
+
+.score-container {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+/* Exit Button */
+#exitButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  background: #ff3d00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#exitButton:hover {
+  background: #d32f2f;
+}
+
+/* Responsive Design (Mobile Devices) */
+@media (max-width: 480px) {
+  .audio-wrapper {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .audio-progress {
+    margin: 15px 0;
+  }
+
+  .choices {
+    flex-direction: column;
+  }
+
+  .choice {
+    width: 100%; /* Stack vertically */
+  }
+}
+
+/* Notification styles */
+#notification {
+  position: fixed; /* Fixed on the screen */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  display: none; /* Initially hidden */
+  background-color: #1f1f1f; /* Matches game container */
+  color: #ffffff;
+  border: 2px solid #00e676; /* Bright green for feedback */
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  text-align: center;
+  z-index: 1000; /* Above everything */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+#notification.correct {
+  border-color: #00e676; /* Green for correct */
+  background-color: #2e7d32; /* Dark green background */
+}
+
+#notification.wrong {
+  border-color: #ff3d00; /* Red for wrong */
+  background-color: #d32f2f; /* Dark red background */
+}

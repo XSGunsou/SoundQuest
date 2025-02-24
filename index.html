@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song Guessing Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>🎵 Song Guessing Game 🎵</h1>
+
+    <!-- Notification Area -->
+    <div id="notification"></div>
+    
+    <!-- Custom Audio Player -->
+    <div class="audio-wrapper">
+      <button id="playPauseButton" class="audio-button">▶</button>
+      <div class="audio-progress" id="audioProgress">
+        <div class="audio-progress-bar" id="audioProgressBar"></div>
+      </div>
+    </div>
+
+    <div class="score-container">
+      <p>Score: <span id="score">0</span></p>
+    </div>
+
+    <div class="choices">
+      <button class="choice" id="choice1"></button>
+      <button class="choice" id="choice2"></button>
+      <button class="choice" id="choice3"></button>
+      <button class="choice" id="choice4"></button>
+    </div>
+
+    <button id="exitButton">Exit</button>
+  </div>
+
+  <audio id="audioPlayer" class="audio-player"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
